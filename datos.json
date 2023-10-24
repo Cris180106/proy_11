@@ -22,5 +22,11 @@
     "nombreproducto": "cafe",
     "inventarioproducto": 78,
     "precioproducto": 700
+  },
+  {
+    "codigoproducto": "6",
+    "nombreproducto": "carro",
+    "inventarioproducto": 5,
+    "precioproducto": 500000
   }
 ]

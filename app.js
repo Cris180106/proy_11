@@ -90,10 +90,14 @@ const agregarProducto = async (productostienda, nuevoProducto) => {
     console.log('Producto agregado:'.bgGreen);
     console.log(nuevoProducto);  // Muestra los detalles del producto agregado.
 
-    const nombrearchivo = './datos.json';  // Nombre del archivo de datos.
-    const cadenaJson = JSON.stringify(productostienda.listaproductos, null, 2);
+    // Se define una constante llamada (nombrearchivo) con la ruta del archivo en la que se guardarán los datos.
+    const nombrearchivo = './datos.json';  
+    // Se define una contante llamada cadenaJson el cual utiliza JSON.stringify para convertir la lista de productos en formato JSON con formato legible.
+    const cadenaJson = JSON.stringify(productostienda.listaproductos);// se utiliza para se utiliza para convertir un objeto JavaScript en una cadena de texto JSON
 
-    fs.writeFile(nombrearchivo, cadenaJson, 'utf-8')
+    // Se utiliza esta línea para escribir el contenido (los productos) de la cadena JSON en el archivo que contiene la lista de productos (nombrearchivo)con la codificación 'utf-8'.
+    fs.writeFile(nombrearchivo, cadenaJson, 'utf-8') //utf-8 se utiliza como la codificación de caracteres para asegurar que los datos se guarden y se lean correctamente
+    //fs.writefile se usa para escribir datos en una rchivo de manera asincronica, aca se usa para escribir la cadena de texto (cadenaJson) en el archivo donde se va a guardar.
         .then(() => {
             // Utiliza `.then` para manejar el caso en que la escritura del archivo se realiza con éxito.
             console.log(`DATOS GUARDADOS EN ${nombrearchivo}`.bgBlue);
